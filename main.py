@@ -1,8 +1,13 @@
-from PyQt6.QtWidgets import QApplication
-from ui.main_window import MainWindow
-import sys
+from cad.freecad.freecad_adapter import generate_cell
 
-app = QApplication(sys.argv)
-window = MainWindow()
-window.show()
-sys.exit(app.exec())
+def main():
+
+    diameter = 18
+    height = 65
+
+    output_file = "outputs/MyBatteryCell.FCStd"
+
+    generate_cell(diameter, height, output_file)
+
+if __name__ == "__main__":
+    main()
